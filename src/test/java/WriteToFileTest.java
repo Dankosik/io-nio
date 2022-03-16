@@ -15,9 +15,14 @@ public class WriteToFileTest {
         File targetFile = new File(FILE_PATH);
         targetFile.delete();
     }
-    //Примеры записи в файл используя абстрактный класс OutputStream
 
-    //пример записи в файл по одному байту, намного медленнее чем буферная запись
+    /**
+     * Примеры записи в файл используя абстрактный класс {@link java.io.OutputStream}
+     * <p>
+     * <p>
+     * <p>
+     * Пример записи в файл по одному байту, намного медленнее чем буферная запись
+     */
     @Test
     public void writeByOneByte() throws IOException {
         long time1 = System.currentTimeMillis();
@@ -31,7 +36,9 @@ public class WriteToFileTest {
     }
 
 
-    //пример буферной записи в файл
+    /**
+     * Пример буферной записи в файл
+     */
     @Test
     public void writeByBytes() throws IOException {
         long time1 = System.currentTimeMillis();
@@ -45,7 +52,9 @@ public class WriteToFileTest {
         outputStream.close();
     }
 
-    //буферная запись используя BufferedOutputStream декоратор
+    /**
+     * Буферная запись используя {@link java.io.BufferedOutputStream} декоратор
+     */
     @Test
     public void writeByBufferedOutputStream() throws IOException {
         long time1 = System.currentTimeMillis();
@@ -59,9 +68,13 @@ public class WriteToFileTest {
     }
 
 
-    //Примеры записи в файл используя абстрактный класс Writer
-
-    //пример записи в файл по одному байту, используя FileWriter
+    /**
+     * Примеры записи в файл используя абстрактный класс {@link java.io.Writer}
+     * <p>
+     * <p>
+     * <p>
+     * Пример записи в файл по одному байту, используя  {@link java.io.FileWriter}
+     */
     @Test
     public void writeByOneByteByFileWriter() throws IOException {
         long time1 = System.currentTimeMillis();
@@ -75,7 +88,9 @@ public class WriteToFileTest {
         fileWriter.close();
     }
 
-    //пример буферной записи в файл, используя BufferedWriter декоратор
+    /**
+     * Пример буферной записи в файл, используя {@link java.io.BufferedWriter} декоратор
+     */
     @Test
     public void writeByOneByteByBufferedWriter() throws IOException {
         long time1 = System.currentTimeMillis();

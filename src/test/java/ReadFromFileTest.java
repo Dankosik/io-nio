@@ -1,21 +1,22 @@
 import org.junit.jupiter.api.Test;
 
 import java.io.*;
-import java.net.InetSocketAddress;
-import java.nio.channels.SelectionKey;
-import java.nio.channels.Selector;
-import java.nio.channels.ServerSocketChannel;
-import java.nio.channels.SocketChannel;
 import java.nio.charset.StandardCharsets;
 
-//примеры чтения из файла
+/**
+ * Примеры чтения из файла
+ */
 public class ReadFromFileTest {
 
     private final String filePath = "src/test/resources/hello-world.txt";
 
-    //Примеры чтения файла используя абстрактный класс InputStream
-
-    //пример чтения файла по одному байту, намного медленнее чем буферное чтение
+    /**
+     * Примеры чтения файла используя абстрактный класс {@link java.io.InputStream}
+     * <p>
+     * <p>
+     * <p>
+     * Пример чтения файла по одному байту, намного медленнее чем буферное чтение
+     */
     @Test
     public void readByOneByte() throws IOException {
         long time1 = System.currentTimeMillis();
@@ -29,7 +30,9 @@ public class ReadFromFileTest {
         inputStream.close();
     }
 
-    //пример буферного чтения файла
+    /**
+     * Пример буферного чтения файла
+     */
     @Test
     public void readByBytes() throws IOException {
         long time1 = System.currentTimeMillis();
@@ -45,7 +48,9 @@ public class ReadFromFileTest {
         inputStream.close();
     }
 
-    //буферное чтение используя BufferedInputStream декоратор
+    /**
+     * Буферное чтение используя {@link java.io.BufferedInputStream} декоратор
+     */
     @Test
     public void readByBufferedInputStream() throws IOException {
         long time1 = System.currentTimeMillis();
@@ -60,9 +65,13 @@ public class ReadFromFileTest {
     }
 
 
-    //Примеры чтения файла используя абстрактный класс Reader
-
-    //пример чтения файла по одному байту, используя FileReader, быстрее чтения по одному байту чем InputStream
+    /**
+     * Примеры чтения файла используя абстрактный класс Reader
+     * <p>
+     * <p>
+     * <p>
+     * Пример чтения файла по одному байту, используя {@link java.io.FileReader}, быстрее чтения по одному байту чем {@link java.io.InputStream}
+     */
     @Test
     public void readByReader() throws IOException {
         long time1 = System.currentTimeMillis();
@@ -76,7 +85,9 @@ public class ReadFromFileTest {
         reader.close();
     }
 
-    //буферное чтение используя BufferedReader декоратор
+    /**
+     * Буферное чтение используя {@link java.io.BufferedReader} декоратор
+     */
     @Test
     public void readByBufferedReader() throws IOException {
         long time1 = System.currentTimeMillis();

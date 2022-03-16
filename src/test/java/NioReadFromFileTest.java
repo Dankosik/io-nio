@@ -2,17 +2,20 @@ import org.junit.jupiter.api.Test;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.stream.Collectors;
 
-//примеры чтения файла используя nio
+/**
+ * Примеры чтения файла используя nio
+ */
 public class NioReadFromFileTest {
 
-    //пример чтения файла используя Files.readAllLines, если файл большой лучше использовать
-    // BufferedReader reader = Files.newBufferedReader(path);
+    /**
+     * Пример чтения файла используя Files.readAllLines, если файл большой лучше использовать
+     * BufferedReader reader = Files.newBufferedReader(path);
+     */
     @Test
     public void whenReadSmallFileJava7_thenCorrect() throws IOException {
         long time1 = System.currentTimeMillis();
@@ -25,9 +28,11 @@ public class NioReadFromFileTest {
         System.out.println(data);
     }
 
-    //аналог вышестоящего примера
+    /**
+     * Аналог вышестоящего примера
+     */
     @Test
-    public void givenFilePath_whenUsingFilesLines_thenFileData() throws URISyntaxException, IOException {
+    public void givenFilePath_whenUsingFilesLines_thenFileData() throws IOException {
         long time1 = System.currentTimeMillis();
 
         Path path = Paths.get("src/test/resources/hello-world.txt");
@@ -40,7 +45,9 @@ public class NioReadFromFileTest {
 
     }
 
-    //пример построчного буферного чтения файла, больше подходит для чтения больших файлов
+    /**
+     * Пример построчного буферного чтения файла, больше подходит для чтения больших файлов
+     */
     @Test
     public void whenReadLargeFileJava7_thenCorrect() throws IOException {
         long time1 = System.currentTimeMillis();

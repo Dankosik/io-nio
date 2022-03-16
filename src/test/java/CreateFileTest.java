@@ -11,7 +11,9 @@ import java.nio.file.Paths;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
-//примеры создания файла
+/**
+ * Примеры создания файла
+ */
 public class CreateFileTest {
 
     private final String FILE_PATH = "src/test/resources/fileToCreate.txt";
@@ -23,14 +25,18 @@ public class CreateFileTest {
         targetFile.delete();
     }
 
-    //ипользуя java nio
+    /**
+     * Ипользуя java nio
+     */
     @Test
     public void givenUsingNio_whenCreatingFile_thenCorrect() throws IOException {
         Path newFilePath = Paths.get(FILE_PATH);
         Files.createFile(newFilePath);
     }
 
-    //используя java io
+    /**
+     * Используя java io
+     */
     @Test
     public void givenUsingFile_whenCreatingFile_thenCorrect() throws IOException {
         File newFile = new File(FILE_PATH);
